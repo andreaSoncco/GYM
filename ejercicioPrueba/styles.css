@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.l-invertida {
+    width: 100px; /* Ancho de la forma de L */
+    height: 200px; /* Alto de la forma de L */
+    background-color: #007bff; /* Color de fondo de la forma de L */
+    position: relative;
+}
+
+.l-invertida::before {
+    content: '';
+    width: 100px; /* Ancho del brazo horizontal de la L */
+    height: 30px; /* Alto del brazo horizontal de la L */
+    background-color: #007bff; /* Color de fondo del brazo horizontal de la L */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.l-invertida::after {
+    content: '';
+    width: 30px; /* Ancho del brazo vertical de la L */
+    height: 170px; /* Alto del brazo vertical de la L */
+    background-color: #007bff; /* Color de fondo del brazo vertical de la L */
+    position: absolute;
+    bottom: 0;
+    left: 100px; /* Coloca el brazo vertical a la derecha del elemento principal */
+    transform: translateY(-100%); /* Gira el brazo vertical 180 grados */
+}

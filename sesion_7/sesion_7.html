@@ -1,0 +1,367 @@
+<!-- 1. CSS Simply Square
+Objetivo
+
+Escriba el HTML/CSS en el editor para replicar la imagen objetivo de la derecha.
+
+Código de base
+
+  <div></div>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background: #dd6b4d;
+    }
+  </style>
+-->
+
+<div></div>
+<style>
+  * {
+    margin: 0;
+    background: #5D3A3A;
+  }
+
+  div {
+    width: 200px;
+    height: 200px;
+    background: #B5E0BA;
+  }
+</style>
+
+<!-- 2. CSS Horizon
+Objetivo
+
+Escriba el HTML/CSS en el editor para replicar la imagen objetivo de la derecha.
+
+Código de base
+
+    <div></div>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background: #dd6b4d;
+      }
+    </style> 
+-->
+<div id='divfirst'></div>
+<div id='divsecond'></div>
+<div id='divthird'></div>
+<div id='divfour'></div>
+<style>
+  * {
+    margin: 0;
+  }
+
+  #divfirst {
+    height: 50px;
+    background: #F7EC7D;
+  }
+
+  #divsecond {
+    height: 50px;
+    background: #E38F66;
+  }
+
+  #divthird {
+    height: 100px;
+    background: #AA445F;
+  }
+
+  #divfour {
+    height: 100px;
+    background: #62306D;
+  }
+</style>
+
+<!-- 3. CSS Carrom
+Objetivo
+
+Escriba el HTML/CSS en el editor para replicar la imagen objetivo de la derecha.
+
+Código de base
+
+    <div></div>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background: #dd6b4d;
+      }
+    </style>
+-->
+<div class="impar" id='first'></div>
+<div class="par" id='second'></div>
+<div class="impar" id='third'></div>
+<div class="par" id='four'></div>
+<style>
+  * {
+    margin: 0;
+    background-color: #62374e;
+  }
+
+  body {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .impar {
+    height: 50px;
+    width: 50px;
+    background-color: #fdc57b;
+    margin: 50px;
+  }
+
+  .par {
+    height: 50px;
+    width: 50px;
+    background-color: #fdc57b;
+    margin: 50px 0px 50px 150px;
+  }
+</style>
+
+<!-- 4. CSS Boxception
+Objetivo
+
+Escriba el HTML/CSS en el editor para replicar la imagen objetivo de la derecha.
+
+Código de base
+
+    <div></div>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background: #dd6b4d;
+      }
+    </style>
+-->
+
+<div class="l"></div>
+<style>
+* {
+  background-color: #F3AC3C;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.l {
+  width: 200px;
+  height: 200px;
+  background-color: #1A4341;
+  position: relative;
+}
+
+.l::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-color: #998235;
+}
+
+.l::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 150px;
+  left: 50px;
+  width: 50px;
+  height: 50px;
+  background-color: #F3AC3C;
+}
+
+</style>
+
+<!-- 5. CSS Interleaved
+Objetivo
+
+Escriba el HTML/CSS en el editor para replicar la imagen objetivo de la derecha.
+
+Código de base
+
+    <div></div>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background: #dd6b4d;
+      }
+    </style>
+-->
+
+<div id="div1" class="amarillo"></div>
+<div id="div2" class="verde"></div>
+<div id="div3" class="amarillo"></div>
+<div id="div4" class="verde"></div>
+<div id="div5" class="amarillo"></div>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    background-color: #1A4341;
+  }
+
+  body {
+    display: flex;
+    position: relative;
+    justify-content: space-evenly;
+    align-items: end;
+    
+  }
+  .verde {
+    align-self: start;
+    width: 50px;
+    height: 200px;
+    background: #998235;
+    border-radius: 0 0 50px 50px;
+  }
+  .amarillo {
+    width: 50px;
+    height: 200px;
+    background: #F3AC3C;
+    border-radius: 50px 50px 0 0;
+  }
+</style>
+
+<!-- 6. CSS Sunset
+Objetivo
+
+Escriba el HTML/CSS en el editor para replicar la imagen objetivo de la derecha.
+
+Código de base
+
+    <div></div>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background: #dd6b4d;
+      }
+    </style>
+
+-->
+
+<!-- OTRA SOLUCIÓN ALTERNATIVA:
+<p>.<p>.<p>.<p>.
+
+  <style>
+   * {
+    margin:75 0-65;
+    background:radial-gradient(1q,#F6DF96 106q,#D25B70 0 775em,#6CB3A9)fixed;
+    font:9%/5vh'
+   -->
+
+   <div id="sol"></div>
+   <div id="mar" class="marcito">
+   <div class="contenedor">
+     <div class="linea"></div>
+     <div class="linea"></div>
+     <div class="linea"></div>
+     <div class="linea"></div>
+   </div>
+   </div>
+   
+   <style>
+   * {
+    margin: 0;
+    padding: 0;
+    background-color: #D25B70
+   }
+   
+   body {
+     display: flex;
+     position: relative;
+     justify-content: center;
+     align-items: center
+   }
+   
+   #sol {
+     position: absolute;
+     background-color: #F6DF96;
+     height: 200px;
+     width: 200px;
+     border-radius: 50%;
+     z-index: 3;
+   }
+   
+   #mar {
+     align-self: end;
+     position: relative;
+     background-color: #6CB3A9;
+     height: 150px;
+     width: 400px;
+   }
+   .contenedor {
+     position: absolute;
+     background-color: transparent;
+     width: 100%;
+     z-index: 4;
+   }
+   .linea {
+     margin-bottom: 10px;
+     color: #6CB3A9;
+     
+     height: 15px;
+     background-color: #6CB3A9;
+   }
+     
+   </style>
+
+
+<div class="container">
+  <div class="rojo-claro"></div>
+<div class="contenedor">
+  <div class="rojo-oscuro"></div>
+  <div class="rojo-oscuro"></div>
+</div>
+  <div class="rojo-claro"></div>
+</div>
+
+<style>
+* {
+margin: 0;
+padding: 0;
+background-color: black;
+border-block:box-sizing;
+}
+
+body {
+margin: 0;
+padding:0;
+display: flex;
+justify-content: center;
+}
+
+.rojo-claro {
+margin: auto;
+background-color: #FE5F55;
+height: 125px;
+width: 40px;
+}
+
+.contenedor {
+width: 400px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.rojo-oscuro {
+background-color: #A64942;
+height: 40px;
+width: 180px;
+}
+
+</style>

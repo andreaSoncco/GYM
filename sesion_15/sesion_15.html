@@ -1,0 +1,105 @@
+<!-- 1. CSS Lock Up
+Objetivo
+
+Escriba el HTML/CSS en el editor para replicar la imagen objetivo de la derecha.
+
+Código de base
+
+    <div></div>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background: #dd6b4d;
+      }
+    </style>
+-->
+
+<div class="marte">
+    <div class="solecito">
+    <div id="sol1" class="sol"></div>
+    <div id="sol2" class="sol"></div>
+    <div id="sol3" class="sol"></div>
+    <div id="sol4" class="sol"></div>
+    </div>
+  </div>
+  <style>
+  
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #E38F66;
+    }
+    .marte {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 200px;
+      height: 200px;
+      border-radius: 100px;
+      background: #AA445F;
+    }
+    .solecito {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 140px;
+      height: 140px;
+    }
+    .sol {
+      width: 70px;
+      height: 70px;
+    }
+  
+    #sol1 {
+      border-top-left-radius: 100px;
+      background-color: transparent;
+    }
+    
+    #sol2 {
+      border-top-right-radius: 100px;
+      background-color: #F7EC7D;
+      position: relative;
+    }
+  
+    #sol2::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      border-top-right-radius: 100px;
+      background-color: #AA445F;
+      width: 40px;
+      height: 40px;
+    }
+  
+    #sol3 {
+      border-bottom-left-radius: 100px;
+      background-color: #F7EC7D;
+      position: relative;
+    }
+  
+    #sol3::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-bottom-left-radius: 100px;
+    background-color: #AA445F;
+    width: 40px;
+    height: 40px;
+  }
+  
+    #sol4 {
+      border-bottom-right-radius: 100px;
+      background-color: transparent;
+    }
+    
+  </style>
+

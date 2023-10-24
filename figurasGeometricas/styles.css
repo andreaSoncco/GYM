@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #100420;
+  min-width: 100vh;
+  min-height: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.cuadrado {
+  width: 100px;
+  height: 100px;
+  background-color: #76b933;
+}
+
+.circulo {
+  width: 100px;
+  height: 100px;
+  background-color: #c731a1;
+  border-radius: 50%;
+}
+
+.rectangulo {
+  width: 200px;
+  height: 100px;
+  background-color: #4a6ee4;
+}
+
+.triangulo {
+  border-top: solid transparent 0px;
+  border-left: solid transparent 50px;
+  border-right: solid transparent 50px;
+  border-bottom: solid #e45247 100px; 
+}
+
+.rombo {
+  width: 75px;
+  height: 75px;
+  background-color: #3cbec7;
+  transform: rotate(45deg) skewX(10deg) skewY(10deg);
+}
+
+.paralelogramo {
+  width: 200px;
+  border-top: solid transparent 0px;
+  border-left: solid transparent 50px;
+  border-right: solid transparent 50px;
+  border-bottom: solid #51d437 100px;
+
+}
+
+.ovalo {
+  width: 200px;
+  height: 100px;
+  background-color: #41c0b3;
+  border-radius: 50%;
+}
+
+.medio-circulo {
+  width: 200px;
+  height: 100px;
+  background-color: #3b46d8;
+  border-radius: 100px 100px 0 0;
+}
+
+.rara {
+  width: 200px;
+  height: 100px;
+  background-color: #9b9b19;
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+}

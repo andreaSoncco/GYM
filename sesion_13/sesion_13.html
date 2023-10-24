@@ -1,0 +1,194 @@
+<!-- 1.
+CSS Cups-and-Balls
+Objetivo
+
+Escriba el HTML/CSS en el editor para replicar la imagen objetivo de la derecha.
+
+Código de base
+
+    <div></div>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background: #dd6b4d;
+      }
+    </style>
+-->
+
+<div class="contenedor">
+    <div id="div1" class="item"></div>
+    <div id="div2"class="item"></div>
+    <div id="div3"class="item"></div>
+    <div id="div4"class="item"></div>
+    <div id="div5"class="item"></div>
+    <div id="div6"class="item"></div>
+    <div id="div7"class="item"></div>
+    <div id="div8"class="item"></div>
+  </div>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      background-color: #1A4341;
+    }
+    
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+  
+  .contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    width: 271px;
+    height: 131px;
+    
+  }
+  .item {
+    width: 50.5px;
+    height: 50.5px;
+    margin: 5px;
+  }
+  
+  #div1 {
+    background-color: #998235;
+    border-radius: 50%;
+  }
+  
+  #div2 {
+    background-color: #F3AC3C;
+    border-radius: 50% 50% 0 0;
+  }
+  
+  #div3 {
+    background-color: #998235;
+    border-radius: 50% 50% 0 0;
+  }
+  
+  #div4 {
+    background-color: #F3AC3C;
+    border-radius: 50%;
+  }
+  
+  #div5 {
+    background-color: #F3AC3C;
+    border-radius: 0 0 50% 50%;
+  }
+  
+  #div6 {
+    background-color: #998235;
+    border-radius: 50%;
+  }
+  
+  #div7 {
+    background-color: #F3AC3C;
+    border-radius: 50%;
+  }
+  
+  #div8 {
+    background-color: #998235;
+    border-radius: 0 0 50% 50%;
+  }
+  </style>
+
+<!-- 2. CSS Smiley
+Objetivo
+
+Escriba el HTML/CSS en el editor para replicar la imagen objetivo de la derecha.
+
+Código de base
+
+    <div></div>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background: #dd6b4d;
+      }
+    </style>
+Tip: border-radius recibe varios parámetros.
+-->
+
+<div class="contenedor">
+    <div id="div1" class="circulo"></div>
+    <div id="div2" class="circulo"></div>
+    <div id="div3" class="circulo"></div>
+  </div>
+  <style>
+   * {
+      margin: 0;
+      padding: 0;
+      background: #6592CF;
+  }
+  
+  body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  .contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: space-around;
+    align-content: space-between;
+    width: 400px;
+    height: 220px;
+  }
+  
+  .circulo {
+    margin: 0px 20px;
+    width: 120px;
+    height: 60px;
+    background: #060F55;
+  }
+  
+  #div1, #div2{
+    position: relative;
+    border-radius: 100px 100px 0 0;
+  }
+  
+  #div1::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    bottom: 0;
+    border-radius: 100px 100px 0 0;
+    background-color: #6592CF;
+    width: 80px;
+    height: 40px;
+  }
+  
+  #div2::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    bottom: 0;
+    border-radius: 100px 100px 0 0;
+    background-color: #6592CF;
+    width: 80px;
+    height: 40px;
+  }
+  
+  #div3 {
+    border-radius: 0 0 100px 100px;
+    position: relative;
+  }
+  
+  #div3::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    border-radius: 0 0 100px 100px;
+    background-color: #6592CF;
+    width: 80px;
+    height: 40px;
+  }
+  </style>

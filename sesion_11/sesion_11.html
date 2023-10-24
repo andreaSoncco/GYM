@@ -1,0 +1,234 @@
+<!-- 1. CSS Equals
+Objetivo
+
+Escriba el HTML/CSS en el editor para replicar la imagen objetivo de la derecha.
+
+Código de base
+
+    <div></div>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background: #dd6b4d;
+      }
+    </style>
+-->
+
+<div id="amarillo"></div>
+<div id="naranja"></div>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #AA445F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+#amarillo {
+  width: 100px;
+  height: 200px;
+  background: #F7EC7D;
+  border-radius: 100px 0 0 100px;
+}
+
+#naranja {
+  width: 100px;
+  height: 200px;
+  background: #E38F66;
+  border-radius: 0 100px 100px 0;
+}
+</style>
+
+<!-- 2. CSS Supernova
+Objetivo
+
+Escriba el HTML/CSS en el editor para replicar la imagen objetivo de la derecha.
+
+Código de base
+
+    <div></div>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background: #dd6b4d;
+      }
+    </style>
+-->
+
+<div class="contenedor">
+  <div class="media-superior" id="media1"></div>
+  <div class="media-superior" id="media2"></div>
+  <div class="media-inferior" id="media3"></div>
+  <div class="media-inferior" id="media4"></div>
+</div>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    background-color: #243D83;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .contenedor {
+    margin: 0;
+    padding: 0;
+    width: 220px;
+    height: 170px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: space-around;
+    align-content: space-between;
+    position: relative;
+  }
+
+  .media-superior {
+    width: 100px;
+    height: 50px;
+    background-color: #6592CF;
+    border-radius: 50px 50px 0 0;
+  }
+
+  #media1 {
+    transform: rotate(-45deg);
+  }
+
+  #media2 {
+    transform: rotate(45deg);
+  }
+
+  .media-inferior {
+    width: 100px;
+    height: 50px;
+    background-color: #6592CF;
+    border-radius: 0 0 50px 50px;
+  }
+
+  #media3 {
+    transform: rotate(45deg);
+  }
+
+  #media4 {
+    transform: rotate(-45deg);
+  }
+
+  .contenedor::after{
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: #EEB850;
+    border-radius: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+</style>
+
+<!-- 3. CSS Web Maker Logo
+Objetivo
+
+Escriba el HTML/CSS en el editor para replicar la imagen objetivo de la derecha.
+
+Código de base
+
+    <div></div>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background: #dd6b4d;
+      }
+    </style>
+-->
+
+<div class="contenedor">
+  <div class="triangulo" id="triangulo1"></div>
+  <div class="triangulo" id="triangulo2"></div>
+</div>
+<style>
+
+  * {
+    margin: 0;
+    padding: 0;
+    
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F2F2B6;
+  }
+  .contenedor {
+    width: 280px;
+    height: 130px;
+    position: relative;
+  }
+
+  #triangulo1 {
+    width: 0;
+    height: 0;
+    border-top: solid #FF6D00 130px;
+    border-left: solid transparent 75px;
+    border-right: solid transparent 75px;
+    position: relative;
+  }
+
+  #triangulo1::after {
+    content: '';
+    position: absolute;
+    bottom:0;
+    left: -54px;
+    width: 0;
+    height: 0;
+    border-top: solid #FD4602 130px;
+    border-left: solid transparent 75px;
+    border-right: solid transparent 75px;
+    z-index: -1;
+  }
+
+    #triangulo2 {
+    width: 0;
+    height: 0;
+    border-left: solid transparent 75px;
+    border-right: solid transparent 75px;
+    border-bottom: solid #FD4602 130px;
+    position: absolute;
+    bottom: 0;
+    left: 110px;
+  }
+
+  #triangulo2::after {
+    content: '';
+    position: absolute;
+    top:0;
+    left: -54px;
+    width: 0;
+    height: 0;
+    border-left: solid transparent 75px;
+    border-right: solid transparent 75px;
+    border-bottom: solid #FF6D00 130px;
+    z-index: -1;
+  }
+</style>
+
+<!-- 4.
+
+
+-->

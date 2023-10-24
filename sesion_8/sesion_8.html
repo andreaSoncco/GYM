@@ -1,0 +1,81 @@
+<!-- 1. CSS Junction
+Objetivo
+
+Escriba el HTML/CSS en el editor para replicar la imagen objetivo de la derecha.
+
+Código de base
+
+    <div></div>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background: #dd6b4d;
+      }
+    </style>
+-->
+
+<div class="container">
+    <div id="rojo-claro1" class="rojo-claro"></div>
+  <div class="contenedor">
+    <div id="rojo-oscuro1" class="rojo-oscuro"></div>
+    <div id="rojo-oscuro2" class="rojo-oscuro"></div>
+  </div>
+    <div id="rojo-claro2" class="rojo-claro"></div>
+</div>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #191919;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#rojo-claro1 {
+  margin: auto;
+  background-color: #FE5F55;
+  height: 130px;
+  width: 40px;
+  border-radius: 0 0 20px 20px;
+}
+
+#rojo-claro2 {
+  margin: auto;
+  background-color: #FE5F55;
+  height: 130px;
+  width: 40px;
+  border-radius: 20px 20px 0 0;
+}
+
+.contenedor {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+  
+#rojo-oscuro1 {
+  background-color: #A64942;
+  height: 40px;
+  width: 180px;
+  border-radius: 0 20px 20px 0;
+}
+
+#rojo-oscuro2 {
+  background-color: #A64942;
+  height: 40px;
+  width: 180px;
+  border-radius: 20px 0 0 20px;
+}
+
+</style>
+
+<!-- 2. 
+
+ -->
