@@ -120,4 +120,160 @@ Este módulo le permite a Node.js transmitir información con el protocolo
 HTTP.
 
 Crear un servidor con http
+
+ESTRUCTURA DE UNA URL
+
+URL: Dirección de un recurso en la web.
+URL Uniform Resource Locator = Localizador Uniforme de Recursos
+Nos permite indicicar cual es la página web que queremos acceder
+Toda esa secuencia de caracteres es lo que le permite al navegador
+saber donde esta ubicada la página que necesitamos obtener y a través
+de muchos pasos complejos se llega a un servidor donde esta alojada
+esa página y luego el servidor nos retorna los recursos que solicitamos
+Todo comienza con la URL, es el punto de partida para poder solicitar
+la información al servidor.
+
+https://www.freecodecamp.org/espanol/
+
+https => Protocolo, es el conjunto de reglas que vamos a usar en la
+         comunicación para acceder a este recurso específico, la s
+         le agrega una capa de seguridad extra.
+        
+www. => Subdominio, información adicional agregada al inicio del
+        dominio de una página web. Permite a los sitios web organizar
+        y separar la información para distintos propósitos. Por ejemplo
+        si es un blog podemos poner blog. y si queremos crear un subdominio
+        en otro idioma podemos usar español.freecodecamp.org y eso nos crearia
+        un subdominio
+
+freecodecamp => Dominio, es literalmente a lo que normalmente nos referimos
+                como el nombre de la página, en este caso sería freecodecamp.
+                El Dominio es una referencia única a un sitio web en internet.
+                Cuando adquirimos un dominio lo estamos comprando y somos los
+                únicos dueños de ese dominio para poder publicar nuestro sitio
+                web en el, no pueden haber dos freecodecamp en internet.
+
+.org => Top-Level Domain: Dominio de nivel superior, otros dominios de nivel superior incluyen:
+    - .com
+    - .net
+    - .int (international)
+    - .edu  (sitios educativos)
+    - .gov (sitios gubernamentales del Gob. de USA)
+
+https://www.freecodecamp.org/ => Esto representa la raíz de nuestro sitio web
+                                 o la página principal de nuestro sitio web.
+
+/español/ => Path: Camino o Ubicación, todo lo que agregemos después de esa
+             barra inicial representa un camino dentro de ese servidor o dentro
+             de ese conjunto de archivos y de directorios o carpetas, cada vez
+             vamos especificando más el recurso al cual queremos acceder. El Path
+             representa el archivo o directorio en el servidor web. Puede tener
+             parámetros para personalizarlo. Estos parámetros son parte de la URL.
+
+https://www.freecodecamp.org/usuarios/14
+
+14 => Parámetro de ruta, ese número va a representar el identificador único del
+      usuario, por ejemplo imaginate que te registraste y se te asigno el número
+      único 14, como ese numero depende del usuario al cual queremos acceder y va
+      a variar de usuario en usuario lo representamos como un parámetro de ruta,
+      nos permite personalizar esa URL para acceder especificamente a los datos
+      que queremos, a los datos en este caso del usuario 14
+
+https://www.google.com/search?q=cursos+de+node
+
+?q=cursos+de+node => Parámetros query: También se les conoce como "query string",
+                     query significa como una busqueda o consulta en español que no
+                     son como tal parte de la URL. Los Parámetros query o parámetros
+                     de busqueda, son parámetros usados para obtener contenido 
+                     dinámico. Por ejemplo, filtrar una lista de recursos, hacer
+                     una busqueda en Google de cursos de node. Lo carácteristico de los
+                     parámetros query es que están separados de la parte principal de la
+                     URL por un signo de interogación "?"
+
+?q=cursos+de+node 
+
+Cuando vemos este pedazo en espefífico de los parámetros query, vemos que hay como un par,
+tenemos una clave "q" y tenemos un valor "cursos+de+node", igual que en JSON igual que en
+objetos de JavaScript, la clave es como el nombre que le asignamos a ese parámetro query
+y el valor es el valor asociado a ese parámetro
+
+https://.ejemplo.org/search?categoria=programacion => ?categoria=programacion
+
+Es secuencia de parámetros query, podemos obtener toda esa secuncia de parámetors query en
+nuestro servidor y procesarlos y filtrar la información que se le pide al cliente, todo esto
+lo podemos hacer con Node.js
+
+Esos parámetros query nos van a permitir filtrar la respuesta que le vamos a enviar al cliente
+y solo enviarle los recursos que sí quiere incluir en la respuesta o en los recursos que va a
+recibir.
+
+¿Qué pasa si queremos incluir varios parámetros query?
+?q=cursos+de+node&sourceid=chrome&ie=UTF-8
+
+?q=cursos+de+node&sourceid=chrome&ie=UTF-8
+
+Sí esta permitido, lo único es que tenemos que separarlo con un ampersand "&" y cada uno debe
+contener su clave y valor correspondientes unidos por un signo igual. Normalmente usamos parámetros
+query para filtrar solicitudes GET (para obtener recursos específicos)
+
+MODULO URL DE NODE.JS
+
+Vamos a crear un objeto URL en app.js
+
+ROUTING EN NODE.JS
+
+Routing: Manejar las solicitudes del cliente en base a ciertos criterios, doscriterios principales
+         el método y el camino. Significa crear distintas rutas para ese servidor, para que el servidor
+         sepa que es lo que tiene que hacer para manejar una solicitud específica.
+
+Route = Ruta
+
+CRITERIOS
+
+A) El método de la solicitud HTTP: De esta forma el servidor sabe qué tipo de operación se realizará, por
+    eso es que el método es importante para determinar una ruta.
+
+    - GET obtener un recurso
+    - POST crear un registro nuevo
+    - PUT para modificar un registro
+    - DELETE eliminar un registro
+    - Otros.
+
+B) El path (camino) de la solicitud HTTP. De esta forma el servidor sabe el recurso específico que se usará
+    o que se va a modificar o a eliminar
+
+En general una ruta se puede describir como una combinación de estos tres elementos:
+
+Método + Path + Cómo Manejarlo
+(método de la solicitud) (como va a manejar esa solicitud)
+¿Qué va a hacer? ¿Dondé lo va a hacer? y ¿Cómo lo va a hacer?
+
+¿COMÓ PODER ACTUALIZAR LA APLICACION DE NODE, EL SERVIDOR CUANDO REALIZAMOS CAMBIOS DE FORMA AUTOMÁTICA?
+
+Hasta este momento hemos estado reiniciando el servidor cada vez que hacemos un cambio y eso en realidad no es
+práctico al momento de desarrollar, para eso tenemos algo llamado Nodemon
+
+Nodemon para Node.js
+
+Herramienta que reinicia la aplicación de Node.js cuando detecta algún cambio en los archivos
+Para instalar nodemon usamos el siguiente comando:
+
+npm istall -g nodemon
+
+Le agremos la g porque lo más recomendable es installar nodemon como un
+comando global para que este disponible donde sea que lo necesites, si lo
+quieres instalar de forma local para un proyecto específico busca en la
+documentación
+
+cuando ejecutes la aplicación, en lugar de node vas a escribir:
+nodemon <aplicación>
+
+Se ejecuta en el terminal cmd pq powershell no tienen permisos
+
+
+
+
+
+
+
 */
