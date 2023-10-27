@@ -17,16 +17,6 @@ app.get('/api/cursos', (req, res) => {
 });
 
 
-
-
-
-
-
-
-
-
-
-
 // Port
 
 const PUERTO = process.env.PORT || 3000;

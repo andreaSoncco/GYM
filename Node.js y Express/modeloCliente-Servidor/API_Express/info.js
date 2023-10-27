@@ -59,6 +59,30 @@ ROUTERS EN EXPRESS
 
 ROUTERS EN DISTINTOS ARCHIVOS
 
+POST, PUT, PACH y DELETE
+
+routerProgramacion.use(express.json()); 
+
+Esto nos va a permitir procesar el cuerpo de esa solicitud en formato json
+y poder trabajar con ese cuerpo de la solicitud en nuestro código con la 
+propiedad body, esto lo vamos a realizar antes de cualquiera de estas rutas
+y para cualquier tipo de método http, esa es la importancia del Middleware.
+
+Las funciones middleware se ejecutan:
+- Después de recibir una solicitud
+- Antes de enviar una respuesta
+
+Tienen acceso al objeto de la solicitud, al objeto de la respuesta y a
+next(), una función que se llama para ejecutar el próximo middleware.
+
+Middleware: es como el intermediario entra lo que se ejecuta la función,
+se recibe la solicitud y se responde.
+
+En la realidad, realizarias este tipo de solicitudes desde el cliente, por
+ejemplo si estas realizando una solicitud desde una aplicación creada con
+React usarias la función fetch() para realizar estas solicitudes
+
+
 
 
 

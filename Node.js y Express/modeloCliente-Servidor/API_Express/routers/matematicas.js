@@ -4,7 +4,7 @@ const {matematicas} = require('../datos/cursos').infoCursos;
 const routerMatematicas = express.Router();
 
 routerMatematicas.get('/', (req, res) => {
-  res.send(JSON.stringify(matematicas));
+  res.json(matematicas);
 });
 
 routerMatematicas.get('/:tema', (req, res) => {
@@ -15,7 +15,7 @@ routerMatematicas.get('/:tema', (req, res) => {
     return res.status(404).send(`No se encontraron cursos de ${tema}`);
   }
 
-  res.send(JSON.stringify(resultados));
+  res.json(resultados);
 });
 
 module.exports = routerMatematicas;
