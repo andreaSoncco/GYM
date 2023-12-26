@@ -1155,9 +1155,6 @@ function compararNumeritos(a, b) {
 }
 
 console.log(compararNumeritos(50, 27));
-// AQUI ME QUEDE VIENDO EL VIDEO
-// 7.35 HRS
-
 
 // var vs. let
 
@@ -1178,6 +1175,7 @@ function miFuncion() {
 miFuncion();
 
 console.log(miVariableGlobal);
+// console.log(miVariableLocal); miVariableLocal no esta definida
 
 var mostrarColor = true;
 
@@ -1196,6 +1194,8 @@ for (var i = 0; i < canasta.length; i++) {
   console.log(sum);
 }
 
+const MI_CONSTANTE = 35;
+
 function calcularAreaCirculo(radio) {
   const PI = 3.14;
   const MI_VARIABLE = "";
@@ -1204,7 +1204,7 @@ function calcularAreaCirculo(radio) {
   if (radio < 0) {
     return undefined;
   }
-  return PI * (radio ** 2);
+  return PI * (radio ** 2); // elevar al cuadrado
 }
 
 console.log(calcularAreaCirculo(10));
@@ -1253,7 +1253,7 @@ const Fecha = () => new Date();
 const sumarTres = (x) => x + 3;
 console.log(sumarTres(4));
 
-const concatenar = (arr1, arr2) => arr1.concat(arr2);
+const concatenar = (arr1, arr2) => arr1.concat(arr2); //concatenar arreglos
 
 console.log(concatenar([1, 2], [3, 4, 5]));
 
@@ -1268,27 +1268,54 @@ console.log(sumarita(1, 1));
 
 const incrementar = (num, valor = 1) => num + valor;
 
-console.log(incrementar(5, 3));
+console.log(incrementar(5, 11));
 
 // Operador rest
 
 // ...args agrega arreglos []
+/* arg se utiliza para abreviar la palabra argumentos, no necesariamente
+   es ese nombre
+*/
 function miFuncion(...args) {
-  console.log(args.length);
-}
+  return args;
+};
 
-miFuncion([1, 2, 3, 4], [4, 5, 6]);
+console.log(miFuncion(1, 2));
+
+console.log(miFuncion(3, 3, 4)); 
+
+console.log(miFuncion([1, 2, 3, 4], [4, 5, 6]));
+
+function miFunction(...args) {
+  return args.length;
+};
+
+console.log(miFunction(3, 2));
+
+console.log(miFunction(0, 1, 2, 3, 4, 5, 6));
 
 const sumarBien = (x, y, z) => {
   const args = [x, y, z];
   return args.reduce((a, b) => a + b, 0);
 }
 
+console.log(sumarBien(1, 2, 3));
+
+/* .reduce() con estos argumentos suma los elementos del arreglo y
+    retorna el resultado.
+*/
+
 const sumarMuyBien = (...args) => {
   return args.reduce((a, b) => a + b, 0);
 };
 
-// Operador spread
+console.log(sumarMuyBien(1, 2, 3, 5)); 
+
+/* Operador spread: Este operador toma un arreglo y lo descompone en sus
+   elementos individuales para que la función pueda resivirlos y
+   asignarlos a sus parámetros correspondientes
+
+*/
 
 const NUMEROS = [1, 2, 3];
 
@@ -1301,4 +1328,357 @@ function sumita(x, y, z) {
 
 console.log(sumita(...NUMEROS));
 
-// SINTAXIS DE DESESTRUCTURACIÓN
+/* SINTAXIS DE DESESTRUCTURACIÓN
+  Nos permite asignar las propiedades de un objeto a variables que
+  podemos usar en nuestro programa
+*/
+
+const usuario = {
+  nombre: "Gino Smith",
+  edad: 34
+}
+
+const name = usuario.nombre;
+const age = usuario.edad;
+
+console.log(name);
+console.log(age);
+
+const {nombre, edad} = usuario;
+
+console.log(nombre);
+console.log(edad);
+
+const coordenadas = {
+  k: 4,
+  m: 6,
+  n: 12
+};
+
+const {k, m, n} = coordenadas;
+
+console.log(k);
+console.log(m);
+console.log(n);
+
+/* SINTAXIS DE DESESTRUCTURACION: OBJETOS ANIDADOS
+*/
+
+const user = {
+  johnDoe: {
+    edadMijo: 27,
+    correo: "johnDoe@freecodecamp.com"
+  }
+};
+
+const {johnDoe: {edadMijo, correo}} = user;
+
+console.log(edadMijo);
+console.log(correo);
+
+const {johnDoe: {edadMijo: edadDelUsuario, correo: correoDelUsuario}} = user;
+
+console.log(edadDelUsuario);
+console.log(correoDelUsuario);
+
+const PRONOSTICO_LOCAL = {
+  "ayer": {
+    minima: 61,
+    maxima: 75
+  },
+  "hoy": {
+    minima: 64,
+    maxima: 77
+  },
+  "mañana": {
+    minima: 68,
+    maxima: 80
+  }
+};
+
+const minimaHoy = PRONOSTICO_LOCAL.hoy.minima;
+const maximaHoy = PRONOSTICO_LOCAL.hoy.maxima;
+console.log(minimaHoy);
+console.log(maximaHoy);
+
+const {hoy: {minima, maxima}} = PRONOSTICO_LOCAL;
+const {hoy: {minima: minimaDeHoy, maxima: maximaDeHoy}} = PRONOSTICO_LOCAL;
+
+console.log(minima);
+console.log(maxima);
+
+console.log(minimaDeHoy);
+console.log(maximaDeHoy);
+
+/* SINTEXIS DE DESESTRUCTURACION: ARREGLOS
+*/
+
+var a;
+var b;
+
+[a, b] = [1, 2];
+console.log(a);
+console.log(b);
+
+const [u, t, l] = [8, 9, 10];
+console.log(u);
+console.log(t);
+console.log(l);
+
+const [o, p,,, q] = [1, 2, 3, 4, 5, 6, 7, 8, 9 ,10];
+console.log(o);
+console.log(p);
+console.log(q);
+
+var a = 8;
+var b = 6;
+
+[b, a] = [a, b];
+
+console.log(a);
+console.log(b);
+
+/* SINTAXIS DE DESESTRUCTURACION CON EL OPERADOR REST
+*/
+
+var a;
+var b;
+var arr;
+
+[a, b, ...arr] = [1, 2, 3, 4, 5, 6, 7];
+
+console.log(a);
+console.log(b);
+console.log(...arr);
+
+const arregloInicial = [1, 2, 3, 4, 5, 6, 7, 8];
+
+function removerTresPrimerosElementos(arr) {
+  const[, , , ...nuevoArreglo] = arr;
+  return nuevoArreglo;
+};
+
+const arregloFinal = removerTresPrimerosElementos(arregloInicial);
+console.log(arregloFinal);
+
+/* SINTAXIS DE DESESTRUCTURACION: PASAR OBJETO COMO ARGUMENTO
+*/
+var nuevoPerfilCliente = {
+  nombre: "Jane Doe",
+  edad: 24,
+  nacionalidad: "Española",
+  ubicacion: "España"
+};
+
+const actualizarPerfil = (informacionDePerfil) => {
+  const {nombre, edad, nacionalidad, ubicacion} = informacionDePerfil;
+  console.log(nombre);
+  console.log(edad);
+  console.log(nacionalidad);
+  console.log(ubicacion);
+};
+
+actualizarPerfil(nuevoPerfilCliente);
+
+const actualizandoPerfil = ({nombre, edad, nacionalidad, ubicacion}) => {
+  console.log(nombre);
+  console.log(edad);
+  console.log(nacionalidad);
+  console.log(ubicacion);
+};
+
+actualizandoPerfil(nuevoPerfilCliente);
+
+const estadisticas = {
+  max: 56.78,
+  desviacionEstandar: 4.34,
+  mediana: 34.54,
+  moda: 23.87,
+  min: -0.75,
+  promedio: 35.85
+};
+
+const mitad = (statistic) => {
+  return (statistic.max + statistic.min) / 2.0;
+};
+
+console.log(mitad(estadisticas));
+
+const puntoMedio = ({max, min}) => {
+  return (max + min) / 2.0;
+};
+
+console.log(puntoMedio(estadisticas));
+
+/* PLANTILLAS LITERALES: 
+
+Tipo especial de cadena de carácteres que nos permite crear cadenas con
+varias líneas y reemplazar los valores de las variables que necesitemos
+facilmente en una cadena.
+
+Caracteristicas:
+- Se usa el acento invertido (backtick) ` en luegar de comillas.
+- Pueden contener comillas simples y dobles.
+- Las líneas se preservan como se escriben en el código
+- Para reemplazar una variable se escribe ${variable}
+- Dentro de ${} también puedes escribir expresiones
+*/
+var a = 6;
+console.log(`El valor de a es ${a}`);
+
+var nameStudent = "Nora";
+var ageStudent = 6;
+
+console.log(`Mi nombre es ${nameStudent} y tengo ${ageStudent} años.`);
+
+var miArreglo = [1, 2, 3, 4];
+
+console.log(`El arreglo es ${JSON.stringify(miArreglo)}`);
+
+var persona = {
+  nombre: "Gino",
+  edad: 10
+};
+
+const SALUDO = `¡Hola! Mi nombre es ${persona.nombre} y tengo ${persona.edad} años.`;
+console.log(SALUDO);
+
+/* CREAR OBJETOS DE FORMA CONCISA
+*/
+const crearPersona = (nombre, edad, idioma) => {
+  return {
+    nombre: nombre,
+    edad: edad,
+    idioma: idioma
+  };
+};
+
+console.log(crearPersona("Gino", 28, "Español"));
+
+const createPerson = (nombre, edad, idioma) => ({nombre, edad, idioma})
+
+console.log(createPerson("Gino", 28, "Español"));
+
+/* METODOS
+this.propiedad: this se refiere al objeto con el que estamos trabajando,
+en el siguiente caso se refiere al objeto persona.
+Si el valor de una propiedad es una función, se denomina "método"
+*/
+
+const People = {
+  nombre: "Isabel",
+  presentarse: function() {
+    return `¡Hola! Mi nombre es ${this.nombre}`;
+  }
+};
+
+console.log(People.presentarse());
+
+const Personaa = {
+  nombre: "Isabel",
+  presentarse() {
+    return `¡Hola! Mi nombre es ${this.nombre}`;
+  }
+};
+
+console.log(Personaa.presentarse());
+
+/* DEFINIR UNA CLASE
+  Una clase es simplemente algo parecido a un plano de un edificio o de
+  un objeto que nos permite crear muchos objetos con la misma estructura,
+  las mismas propiedades y las mismas funcionalidades, es un plano
+  general que nos permite escribir código una sola vez y reusarlo para
+  crear tantos objetos como necesitemos en nuestro programa.
+
+  Para el nombre de las clases seguimos la convención UpperCamelCase,
+  igual que en las variables pero solo que las clases empiezan con letra
+  mayuscula
+
+*/
+
+class TransbordadorEspacial {
+  constructor(planeta) {
+    this.planeta = planeta;
+  }
+}
+
+/* Creamos un nuevo objeto con la palabra clave new seguido del nombre de
+   la clase TransbordadorEspacial y entre parentesis los argumentos que
+   requiera el contructor
+*/
+var zeus = new TransbordadorEspacial("Jupiter");
+console.log(zeus);
+console.log(zeus.planeta);
+
+var apolo = new TransbordadorEspacial("Marte");
+console.log(apolo.planeta);
+
+class Mascota {
+  constructor(nombre, edad) {
+    this.nombre = nombre;
+    this.edad = edad;
+  }
+};
+
+var miMascota = new Mascota("Nora", 5);
+var tuMascota = new Mascota("Gino", 2);
+console.log(miMascota);
+console.log(miMascota.nombre);
+console.log(tuMascota.nombre);
+
+/* GETTERS Y SETTERS
+  Los objetos pueden tener funciones asociadas a esos objetos, también
+  podemos definir funciones en una clase para que cuando creemos un objeto,
+  ese objeto tenga todas esas funciones asociadas pero hay dos funciones
+  específicas que se llaman Getters y Setters que nos van a permitir
+  proteger la data de ese objeto.
+
+  En JavaScript podemos proteger la data (propiedad autor) haciendo que
+  nuestras variables sean privadas por convención, agregando un guión
+  bajo "_" antes del nombre de la propiedad, esto le dice a otros
+  desarrolladores que no deberian modificar el nombre de este valor, solo
+  se puede usar internamente dentro de la clase, aun así podemos dar
+  acceso a esa propiedad con los getters y los setters
+
+  Los Getters con métodos que nos permiten obtener el valor de una
+  propiedad privada (una propiedad que tiene un guión bajo antes de su
+  nombre), nos permite acceder a ese valor de forma indirecta 
+
+  Un Setter es una función que nos permite actualizar el valor de una
+  propiedad y son muy utiles porque podemos verificar el valor nuevo
+  antes de asignarlo, sino usamos un setter entonces podriamos cambiar
+  un valor a cualquier valor pero que no sea valido
+
+*/
+
+class Libro {
+  constructor(autor) {
+    this._autor = autor;
+  }
+
+  get autor() {
+    return this._autor;
+  }
+
+  set autor(nuevoAutor) {
+    this._autor = nuevoAutor;
+  }
+
+};
+
+const libro = new Libro("anónimo");
+console.log(libro.autor);
+
+libro.autor = "Gino Smith";
+console.log(libro.autor);
+
+
+
+
+
+
+
+
+
+
+
